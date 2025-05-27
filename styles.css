@@ -1,0 +1,776 @@
+/* Temel gövde stili */
+body {
+  margin: 0; /* Sayfa kenar boşluklarını kaldırır */
+  font-family: 'Helvetica', sans-serif; /* Yazı tipi */
+  color: #333; /* Metin rengi */
+  background: #fff; /* Arka plan rengi */
+}
+
+/* Üst menü (header) */
+header {
+  background: #fff; /* Beyaz arka plan */
+  border-bottom: 1px solid #ddd; /* Altına ince çizgi */
+  padding: 10px 0; /* Dikey boşluk */
+  position: sticky; /* Yukarıda sabit durur */
+  top: 0; /* Sayfanın en üstünde */
+   z-index: 999; /* en üst*/
+}
+
+/* İçerik hizalama için kapsayıcı */
+.container {
+  max-width: 1200px; /* Maksimum genişlik */
+  margin: auto; /* Ortalamak için */
+  padding: 0 20px; /* Yandan boşluk */
+  display: flex;
+  justify-content: space-between; /* Logo ve menü uzaklaşır */
+  align-items: center;
+}
+
+/* Menü linkleri */
+.nav-links {
+  display: flex; /* Yanyana diz */
+  gap: 20px; /* Aralarına boşluk */
+  list-style: none; /* Noktalı listeyi kaldır */
+}
+
+/* Menüdeki bağlantılar */
+.nav-links a {
+  text-decoration: none; /* Alt çizgi yok */
+  color: #003366; /* Yazı rengi */
+}
+
+/* Logo stil */
+.logo {
+  width: 150px; /* Logo genişliği */
+  height: auto; /* Oranı koru */
+}
+
+/* Hero bölümü */
+.hero {
+  background: url('img/arkaplan.jpg') no-repeat center center/cover; /* Arka plan görseli */
+  height: 60vh; /* Yüksekliği ekranın %60’ı kadar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+/* Hero başlığı */
+.hero-content h1 {
+  font-size: 3rem; /* Büyük başlık */
+  margin-bottom: 0 /* Görselin alt boşluk sorununu çözer */
+}
+/* Ortak bölümler için padding ve ortalama */
+.brands, .haberler {
+  color: #003366;
+  padding: 40px 20px;
+  text-align: center;
+}
+/* Marka logoları */
+.brand-logos img {
+width: 120px;         /* Her logo 120 piksel genişliğinde */
+height: auto;         /* Yükseklik otomatik ayarlanır, oran bozulmaz */
+object-fit: contain;  /* Görüntü taşmadan kapsar */
+margin: 10px;         /* Aralarında boşluk */
+transition: transform 0.3s ease; /* Hover efekti için geçiş */
+}
+
+.brand-logos img:hover {
+transform: scale(3.05); /* Üzerine gelince hafif büyür */
+}
+
+.brand-logos {
+  display: flex;
+  flex-wrap: wrap; /* Taşarsa alta geçsin */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.haberler {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.haberler h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #003366;;
+}
+
+/* Kutuları yan yana dizer */
+.haber-kutular {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ekran daralırsa alta geçsin */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.haber-karti {
+  flex: 1 1 calc(33.333% - 20px); /* 3 eşit kutu */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.haber-karti:hover {
+  transform: translateY(-5px);
+}
+
+.haber-karti h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+color: #003366;}
+
+.haber-karti p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.haber-karti a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.haber-karti a:hover {
+  background-color: #003366;
+}
+
+
+.baslik{
+    color: #000000;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bizi-takip-et-bolumu {
+  background-color: #ffffff; /* Beyaz arka plan */
+  padding: 40px 20px;
+  text-align: center;
+  color: #000000; /* Doğuş Otomotiv mavisi yazı rengi */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sosyal-ikonlar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sosyal-ikon {
+  background-color: #000000; /* -siyah arka plan */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 83, 156, 0.4);
+  text-decoration: none;
+}
+/* Sosyal ağlara özel renkler */
+.sosyal-ikon.facebook:hover {
+  background-color: #3b5998;
+}
+
+.sosyal-ikon.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.sosyal-ikon.twitter:hover {
+  background-color: #1DA1F2;
+}
+
+.sosyal-ikon.linkedin:hover {
+  background-color: #0077b5;
+}
+
+/* Responsive tasarım */
+@media (max-width: 480px) {
+  .baslik {
+    font-size: 2rem;
+  }
+
+  .sosyal-ikon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+/* Alt bilgi alanı */
+footer {
+  background: #222; /* Siyah zemin */
+  color: white; /* Beyaz yazı */
+  padding: 20px;
+  text-align: center;
+}
+footer .container{ /*container ile çakışan özelliği iptal ettim*/
+ display: block; /* Flex'i kaldır */
+  text-align: center; /* İçeriği ortala */
+}
+
+html {
+  scroll-behavior: smooth; /* yumuşak geçiş*/
+
+}
+.hakkimizda-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+.section-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  object-fit: cover;
+}
+
+.hakkimizda-bolum {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hakkimizda-altbaslik {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  display: inline-block;
+  padding-bottom: 6px;
+  cursor: default;
+}
+.ik-main {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+/* Başlıklar */
+.ik-main h2 {
+  font-size: 2.6rem;
+  color: #003366; /* Koyu mavi */
+  margin-bottom: 25px;
+  border-bottom: 3px solid #0077cc;
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+.ik-main h3 {
+  font-size: 1.8rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #003366;
+  font-weight: 600;
+}
+
+/* Paragraflar */
+.ik-main p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Pozisyonlar bölümü */
+.pozisyonlar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Her pozisyon kartı */
+.pozisyon {
+  flex: 1 1 280px;
+  background-color: #f9faff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 119, 204, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.pozisyon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.2);
+}
+
+.pozisyon strong {
+  color: #0077cc;
+}
+
+/* Liste */
+.pozisyon ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-bottom: 20px;
+}
+
+/* Başvur butonu */
+.pozisyon a {
+  align-self: flex-start;
+  text-decoration: none;
+  background-color: #0077cc;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.pozisyon a:hover {
+  background-color: #005fa3;
+}
+
+/* Başvuru formu */
+#basvuru-formu {
+  margin-top: 50px;
+}
+
+#basvuru-formu h2 {
+  margin-bottom: 20px;
+}
+
+#basvuru-formu p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* Form etiketleri */
+form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #003366;
+}
+
+/* Form inputları */
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* Textarea */
+form textarea {
+  resize: vertical;
+}
+
+/* Buton */
+form button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pozisyonlar {
+    flex-direction: column;
+  }
+
+  .pozisyon {
+    flex: 1 1 100%;
+  }
+}
+
+.section-banner {
+  position: relative;
+  width: 100vw;           /* Tüm ekran genişliği kadar (viewport width) */
+  left: 50%;              /* Sol kenarı ekranın ortasına hizalar */
+  right: 50%;             /* Sağ kenarı ekranın ortasına hizalar */
+  margin-left: -50vw;     /* Sol kenardan kendini tekrar sola çeker */
+  margin-right: -50vw;    /* Sağdan da taşmayı engeller */
+  height: 220px;          /* Sabit yükseklik verir (örneğin bir banner yüksekliği) */
+  z-index: 1;             /* Katman sırası (1 olduğunda genelde normalin üstünde kalır) */
+}
+
+.section-banner img {
+  width: 100%;             /* Banner genişliği neyse resim de o kadar olur */
+  height: 220px;           /* Banner yüksekliği kadar yükseklik */
+  object-fit: cover;       /* Resmi kırparak kutuya taşır, boşluk bırakmaz */
+  display: block;          /* Alt boşluğu (inline spacing) kaldırır */
+}
+.motivasyon {
+font-family: 'Great Vibes', cursive;
+  font-size: 44px;
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  padding: 15px 10px;
+  box-shadow: -2px 2px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+/* Responsive: mobilde biraz küçült */
+@media (max-width: 600px) {
+  .section-box {
+    padding: 20px 20px;
+    margin: 20px 15px;
+  }
+
+  .section-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-box p,
+  .section-box ul {
+    font-size: 1rem;
+  }
+}
+/* İLETİŞİM / Haber kartları içindeki form alanları için */
+.haber-karti form input[type="text"],
+.haber-karti form input[type="email"],
+.haber-karti form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* kenar boşlukları düzgün hesaplar */
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* textarea'nın boyutu değişebilir */
+}
+
+/* Gönder butonu */
+.haber-karti form button[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.haber-karti form button[type="submit"]:hover {
+  background-color: #ffffff;
+}
+/* HABERLER BÖLÜMÜ */
+.haberler-bolumu {
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.haber-kapsayici {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.haber-kutu {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.haber-kutu img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.haber-etiket {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.haber-detay h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.haber-tarih {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.haber-detay p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .haber-kutu {
+    flex: 1 1 100%;
+  }
+}
+.sayfa-sonu-cizgisi {
+  border: none;
+  border-top: 2px solid #333; /* kalın ve koyu renk çizgi */
+  margin: 40px 0 20px 0; /* üst ve alt boşluk */
+  width: 100%; /* tam genişlik */
+}
+/* Tablet için */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero {
+    height: 40vh;
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .brand-logos img {
+    width: 90px;
+  }
+
+  .haber-kutular {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .haber-karti {
+    flex: 1 1 100%;
+  }
+
+  .pozisyonlar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pozisyon {
+    flex: 1 1 100%;
+  }
+
+  .section-banner {
+    height: 180px;
+  }
+
+  .section-banner img {
+    height: 180px;
+  }
+}
+
+/* Mobil için */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .hero {
+    height: 30vh;
+    padding: 0 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .brand-logos img {
+    width: 70px;
+    margin: 5px;
+  }
+
+  .haber-kutular {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .haber-karti {
+    padding: 15px;
+  }
+
+  .baslik {
+    font-size: 1.8rem;
+  }
+
+  .sosyal-ikon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .pozisyon {
+    padding: 15px 20px;
+  }
+
+  .section-banner {
+    height: 140px;
+  }
+
+  .section-banner img {
+    height: 140px;
+  }
+
+  #basvuru-formu {
+    padding: 0 10px;
+  }
+}
+/* Başlangıçta menü gizli olsun */
+.nav-links {
+  display: none;
+  flex-direction: column; /* mobilde dikey liste için */
+  position: absolute;
+  top: 60px; /* header yüksekliğine göre ayarla */
+  right: 0;
+  background-color: #fff; /* arka plan */
+  width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Hamburger aktifken menüyü göster */
+.nav-links.active {
+  display: flex;
+}
+
+/* Hamburger ikonuna tıklanınca değişim */
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Hamburger aktifken çarpı ikonuna dönüşebilir (örnek) */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Büyük ekranlarda menü hep görünür olsun */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}@media (max-width: 700px) {
+  .menu-links {
+    position: fixed;
+    top: 100px;
+    left: -100%;      
+    height: 100vh;
+    width: 200px;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 1rem;
+    font-weight: 500;
+    transition: left 0.3s ease;  
+    z-index: 999;
+  }
+  .menu-links.active {
+    left: 0;          
+  }
+}
