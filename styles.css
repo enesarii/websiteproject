@@ -706,10 +706,11 @@ font-family: 'Great Vibes', cursive;
   flex-direction: column; /* mobilde dikey liste için */
   position: absolute;
   top: 60px; /* header yüksekliğine göre ayarla */
-  right: 0;
+  left: 0;
   background-color: #fff; /* arka plan */
   width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
 }
 
 .hamburger {
@@ -722,6 +723,7 @@ font-family: 'Great Vibes', cursive;
   justify-content: space-between;
   width: 30px;         /* Hamburger genişliği */
   height: 20px;        /* Hamburger yüksekliği */
+  z-index: 1100;
 }
 /* Hamburger aktifken menüyü göster */
 .nav-links.active {
