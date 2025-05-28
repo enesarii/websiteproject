@@ -10,7 +10,6 @@ body {
 header {
   background: #fff; /* Beyaz arka plan */
   border-bottom: 1px solid #ddd; /* Altına ince çizgi */
-  padding: 10px 0; /* Dikey boşluk */
   position: sticky; /* Yukarıda sabit durur */
   top: 0; /* Sayfanın en üstünde */
    z-index: 999; /* en üst*/
@@ -28,8 +27,8 @@ header {
 
 /* Menü linkleri */
 .nav-links {
+  font-weight:bold;
   display: flex; /* Yanyana diz */
-  gap: 20px; /* Aralarına boşluk */
   list-style: none; /* Noktalı listeyi kaldır */
 }
 
@@ -58,12 +57,12 @@ header {
 /* Hero başlığı */
 .hero-content h1 {
   font-size: 3rem; /* Büyük başlık */
-  margin-bottom: 0 /* Görselin alt boşluk sorununu çözer */
+
 }
 /* Ortak bölümler için padding ve ortalama */
 .brands, .haberler {
   color: #003366;
-  padding: 40px 20px;
+  padding: px 20px;
   text-align: center;
 }
 /* Marka logoları */
@@ -96,7 +95,7 @@ transform: scale(3.05); /* Üzerine gelince hafif büyür */
 .haberler h2 {
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #003366;;
+  color: #003366;
 }
 
 /* Kutuları yan yana dizer */
@@ -704,16 +703,15 @@ font-family: 'Great Vibes', cursive;
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 50px; /* header yüksekliğine göre ayarla */
-  left: 10px; /* hamburger ile hizala */
+  top: 35px; /* header yüksekliğine göre ayarla */
+  left:0px; /* hamburger ile hizala */
   background-color: #fff;
-  width: 200px;
+  width: 125px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 1200; /* hamburgerden yüksek */
-  border-radius: 4px;
   padding: 10px 0;
+  opacity:var(#000000);
 }
-
 .nav-links a {
   color: #003366;
   padding: 10px 20px;
@@ -726,9 +724,10 @@ font-family: 'Great Vibes', cursive;
 }
 
 /* Hamburger */
+/* Hamburger ikon stili */
 .hamburger {
   position: absolute;
-  top: 10px;
+  top: 18px;
   left: 10px;
   cursor: pointer;
   z-index: 1300; /* en üstte olsun */
@@ -739,13 +738,15 @@ font-family: 'Great Vibes', cursive;
   justify-content: space-between;
 }
 
+/* Hamburger çizgileri */
 .hamburger div {
   height: 3px;
   background-color: #333;
   border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hamburger aktifken çarpı ikonuna dönüşebilir (örnek) */
+/* Hamburger aktifken çarpı ikonuna dönüşme animasyonu */
 .hamburger.active div:nth-child(1) {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -758,7 +759,37 @@ font-family: 'Great Vibes', cursive;
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Büyük ekranlarda menü hep görünür olsun */
+/* Menü linklerinin temel hali (mobil için gizli) */
+.nav-links {
+  display: none;
+  flex-direction: column;
+}
+
+/* Menü aktifken (mobilde açılınca) */
+.nav-links.active {
+  display: flex;
+}
+
+/* Mobil menü için yan panel */
+@media (max-width: 700px) {
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    height: 200px;
+    width: 120px;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+  .nav-links.active {
+    left: 0;
+  }
+}
+
+/* Büyük ekranlarda menünün sürekli görünmesi ve hamburger gizlenmesi */
 @media (min-width: 768px) {
   .nav-links {
     display: flex !important;
@@ -767,27 +798,8 @@ font-family: 'Great Vibes', cursive;
     width: auto;
     box-shadow: none;
   }
-
   .hamburger {
     display: none;
   }
-}@media (max-width: 700px) {
-  .menu-links {
-    position: fixed;
-    top: 100px;
-    left: -100%;      
-    height: 100vh;
-    width: 200px;
-    background-color: white;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    padding-left: 1rem;
-    font-weight: 500;
-    transition: left 0.3s ease;  
-    z-index: 999;
-  }
-  .menu-links.active {
-    left: 0;          
-  }
 }
+
