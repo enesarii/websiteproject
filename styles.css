@@ -700,18 +700,19 @@ font-family: 'Great Vibes', cursive;
 }
 /* Başlangıçta menü gizli olsun */
 .nav-links {
+  align-items: center;
   border-radius: 5%;
   display: none;
-  flex-direction: column;
   position: absolute;
-  top: 30px; /* header yüksekliğine göre ayarla */
-  left:0px; /* hamburger ile hizala */
+  top:30px; /* header yüksekliğine göre ayarla */
+  left:20px; /* hamburger ile hizala */
   background-color: #fff;
   width: 125px;
-  height: 230px;
+  height: 20px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 1200; /* hamburgerden yüksek */
   padding: 10px 0;
+  
 }
 .nav-links a {
   color: #003366;
