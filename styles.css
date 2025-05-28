@@ -565,7 +565,6 @@ font-family: 'Great Vibes', cursive;
   font-size: 15px;
   line-height: 1.6;
 }
-
 /* Mobil uyum */
 @media (max-width: 768px) {
   .haber-kutu {
@@ -703,42 +702,47 @@ font-family: 'Great Vibes', cursive;
 /* Başlangıçta menü gizli olsun */
 .nav-links {
   display: none;
-  flex-direction: column; /* mobilde dikey liste için */
+  flex-direction: column;
   position: absolute;
-  top: 60px; /* header yüksekliğine göre ayarla */
-  left: 0;
-  background-color: #fff; /* arka plan */
+  top: 50px; /* header yüksekliğine göre ayarla */
+  left: 10px; /* hamburger ile hizala */
+  background-color: #fff;
   width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
+  z-index: 1200; /* hamburgerden yüksek */
+  border-radius: 4px;
+  padding: 10px 0;
 }
 
+.nav-links a {
+  color: #003366;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: #eee;
+}
+
+/* Hamburger */
 .hamburger {
-  color: #000;
-  position: absolute;  /* Kesin konum için */
-  top: 10px;           /* Üstten 10px boşluk */
-  left: 10px;          /* Soldan 10px boşluk */
+  position: absolute;
+  top: 10px;
+  left: 10px;
   cursor: pointer;
+  z-index: 1300; /* en üstte olsun */
+  width: 30px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;         /* Hamburger genişliği */
-  height: 20px;        /* Hamburger yüksekliği */
-  z-index: 1100;
-}
-/* Hamburger aktifken menüyü göster */
-.nav-links.active {
-  display: flex;
 }
 
-/* Hamburger ikonuna tıklanınca değişim */
 .hamburger div {
-  width: 25px;
   height: 3px;
-  border-radius: 2px;
   background-color: #333;
-  margin: 5px 0;
-  transition: 0.4s;
+  border-radius: 2px;
 }
 
 /* Hamburger aktifken çarpı ikonuna dönüşebilir (örnek) */
