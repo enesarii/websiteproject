@@ -714,6 +714,7 @@ font-family: 'Great Vibes', cursive;
 }
 
 .hamburger {
+  color: #000;
   position: absolute;  /* Kesin konum için */
   top: 10px;           /* Üstten 10px boşluk */
   left: 10px;          /* Soldan 10px boşluk */
